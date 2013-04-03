@@ -2,7 +2,7 @@
 
 RAILS_ENV=development bundle exec rails server > /dev/null 2>&1 &
 
-ATTEMPTS=30
+ATTEMPTS=60
 
 while [ $ATTEMPTS -gt 0 ]; do
         echo "Attempts remaining: $ATTEMPTS"
