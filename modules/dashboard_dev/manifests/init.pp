@@ -101,7 +101,7 @@ class dashboard_dev(
 	}
 
 	exec { 'bundle_install':
-		command => 'RAILS_ENV=development bundle --path vendor/bundle --without="postgresql development test"',
+		command => 'bundle --path vendor/bundle --without="postgresql development test"',
 		cwd     => "/opt/${puppet_dashboard}",
 		require => [
 			Class['dashboard_dev::packages'],
@@ -113,7 +113,7 @@ class dashboard_dev(
 	}
 
 	exec { 'migrate_database':
-		command => 'RAILS_ENV=development bundle exec rake db:migrate',
+		command => 'bundle exec rake db:migrate',
 		cwd     => "/opt/${puppet_dashboard}",
 		require => Exec['bundle_install'],
 	}
