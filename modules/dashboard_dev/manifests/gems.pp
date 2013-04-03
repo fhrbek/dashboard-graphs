@@ -1,6 +1,6 @@
 class dashboard_dev::gems {
 	package { 'bundler':
-		name     => 'rack',
+		name     => 'bundler',
 		ensure   => present,
 		provider => 'gem',
 	}

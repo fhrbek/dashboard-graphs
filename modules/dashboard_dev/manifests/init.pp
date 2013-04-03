@@ -101,7 +101,7 @@ class dashboard_dev(
 	}
 
 	exec { 'bundle_install':
-		command => 'bundle --path vendor/bundle --without="postgresql development test"',
+		command => 'bundle install --path vendor/bundle --without="postgresql development test"',
 		cwd     => "/opt/${puppet_dashboard}",
 		require => [
 			Class['dashboard_dev::packages'],
